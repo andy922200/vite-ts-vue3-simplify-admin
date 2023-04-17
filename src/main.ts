@@ -5,6 +5,9 @@ import i18n from '@/lang/index'
 import App from './App.vue'
 import '@/dynamicRoutesWithPermissions'
 
+// integrate with svg icons
+import 'virtual:svg-icons-register'
+
 const app = createApp(App)
 
 app.use(pinia)

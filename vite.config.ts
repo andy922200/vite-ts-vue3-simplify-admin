@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url'
 import vue from '@vitejs/plugin-vue'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import eslintPlugin from 'vite-plugin-eslint' 
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default ({ mode }: ConfigEnv): UserConfig => {
     const env = loadEnv(mode, process.cwd())
@@ -22,7 +23,13 @@ export default ({ mode }: ConfigEnv): UserConfig => {
                 // eslint-disable-next-line no-undef
                 include: resolve(dirname(fileURLToPath(import.meta.url)), './lang/**'),
             }),
-            eslintPlugin({ cache: false })
+            eslintPlugin({ cache: false }),
+            createSvgIconsPlugin({
+                // 指定需要缓存的图标文件夹
+                iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
+                // 指定symbolId格式
+                symbolId: 'icon-[dir]-[name]',
+            })
         ],
         css: {
             preprocessorOptions: {
