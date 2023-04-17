@@ -1,0 +1,35 @@
+@import url('normalize.css/normalize.css');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: auto !important;
+    min-height: 100vh;
+    min-height: --webkit-fill-available;
+}
+
+body {
+    height: 100%;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    font-weight: 500;
+}
+
+a,
+a:hover,
+a::before {
+    text-decoration: none;
+}

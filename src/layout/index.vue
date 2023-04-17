@@ -1,14 +1,12 @@
 <template>
     <div class="app-wrapper">
-        <div class="main-container">
-            <AppMain />
-        </div>
+        <AppMain />
     </div>
 </template>
   
 <script setup lang="ts">
 import { computed, watchEffect } from 'vue'
-import AppMain from './AppMain.vue'
+import { AppMain } from './components/index'
 import { useWindowSize } from '@vueuse/core'
   
 import useStore from '@/store'
@@ -28,3 +26,10 @@ watchEffect(() => {
     }
 })
 </script>
+
+<style lang="scss">
+.app-wrapper{
+    min-height: 100vh;
+    height: 100%;
+}
+</style>
