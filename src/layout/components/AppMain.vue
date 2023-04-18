@@ -24,6 +24,6 @@
 }
 
 .fixed-header + .app-main {
-    padding-top: 50px;
+    padding-top: $navbar-height;
 }
 </style>

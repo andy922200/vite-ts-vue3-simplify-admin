@@ -34,7 +34,8 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: '@import "@/assets/styles/variables.scss";'
+                    additionalData: '@use "@/assets/styles/variables.scss" as *;',
+                    javascriptEnabled: true
                 }
             }
         },
